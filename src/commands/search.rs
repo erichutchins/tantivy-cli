@@ -58,6 +58,9 @@ fn run_search(directory: &Path, query: &str) -> tantivy::Result<()> {
             scorer.advance();
         }
     }
+
+    handle.flush()?;
+
     Ok(())
 }
 
